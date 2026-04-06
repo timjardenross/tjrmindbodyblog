@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | TJR Mind &amp; Body</title>
+  <meta name="description" content="Tim Jarden Ross — holistic wellness coach with lived experience of chronic pain and scoliosis. My authentic story." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── About page specific layout ── */
+    .about-editorial {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* Sticky image column */
+    .about-image-col {
+      position: sticky;
+      top: 100px;
+    }
+
+    .about-image-col img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: var(--shadow-md);
+      display: block;
+    }
+
+    .about-image-caption {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .about-image-tag {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 16px;
+      background: var(--blue-pale);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Story sections on the right */
+    .about-story-col {
+      padding-top: 8px;
+    }
+
+    .story-section {
+      padding-bottom: 52px;
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .story-section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .story-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .story-number span.num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .story-number span.label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .story-section h2 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 18px;
+      line-height: 1.25;
+    }
+
+    .story-section p {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .story-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .pull-quote {
+      border-left: 3px solid var(--blue);
+      padding: 14px 20px;
+      margin: 24px 0;
+      background: var(--blue-pale);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .pull-quote p {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.65;
+      margin: 0 !important;
+    }
+
+    .about-cta-box {
+      margin-top: 56px;
+      padding: 40px 44px;
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .about-cta-box p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.65;
+      max-width: 420px;
+      margin: 0;
+    }
+
+    .about-cta-box p strong {
+      color: var(--white);
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 21px;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 900px) {
+      .about-editorial {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about-image-col {
+        position: static;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      .about-cta-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 28px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .story-section h2 { font-size: 22px; }
+      .about-cta-box { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+  <nav class="side-nav" id="sideNav">
+    <button class="close-btn" id="closeNav" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About me</a>
+    <a href="blog.html">Blog</a>
+    <a href="coaching.html">What is Coaching?</a>
+    <a href="lets-chat.html">Book a Call</a>
+  </nav>
+
+  <header>
+    <div class="header-inner">
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="logo-link">
+        <img src="https://img1.wsimg.com/isteam/ip/d082d043-4001-40cb-9433-8a51fb944293/fulllogo_transparent-558685e.png/:/rs=h:200,cg:true,m/qt=q:95" alt="TJR Mind &amp; Body" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <span class="section-tag">My Story</span>
+    <h1>The Heart of TJR Mind &amp; Body</h1>
+  </div>
+
+  <!-- Editorial Layout -->
+  <section class="section">
+    <div class="container">
+      <div class="about-editorial">
+
+        <!-- Left: Spine image — sticky as you scroll -->
+        <div class="about-image-col">
+          <img
+            src="https://img1.wsimg.com/isteam/ip/d082d043-4001-40cb-9433-8a51fb944293/blob.png/:/cr=t:15.4%25,l:46.76%25,w:40.42%25,h:58.15%25/rs=w:365,h:274.4360902255639,cg:true,m"
+            alt="Spinal X-Ray showing scoliosis"
+          />
+          <p class="about-image-caption">X-ray of Tim's scoliosis — the journey that started it all</p>
+          <span class="about-image-tag">📍 Melbourne, Australia</span>
+        </div>
+
+        <!-- Right: Story sections -->
+        <div class="about-story-col">
+
+          <!-- Section 1 -->
+          <div class="story-section">
+            <div class="story-number">
+              <span class="num">1</span>
+              <span class="label">The Beginning</span>
+            </div>
+            <h2>My Scoliosis Journey</h2>
+            <p>
+              My journey began at 12 with scoliosis, a condition necessitating multiple spinal
+              surgeries throughout my life. In 2016 alone, I underwent four spinal surgeries
+              for issues ranging from aborted initial attempts to infections and implant
+              stabilisation.
+            </p>
+            <p>
+              In 2022, broken implants required further surgery and a prolonged recovery.
+              Most recently, I faced potential surgery again — with unbearable, constant pain
+              severely limiting my mobility even with medication, as specialists investigated
+              the suspected impact on the vertebra below my spinal fusion.
+            </p>
+            <div class="pull-quote">
+              <p>"Living with this level of pain for so long forces you to find a different relationship with your body — one built on patience, not resistance."</p>
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="story-section">
+            <div class="story-number">
+              <span class="num">2</span>
+              <span class="label">The Turning Point</span>
+            </div>
+            <h2>Finding My Path to Healing</h2>
+            <p>
+              Eventually, self-help became crucial alongside medical treatment. The increased
+              openness around mental health encouraged me to explore alternative therapies.
+              Chinese medicine and yoga offered some relief, and I've incorporated meditation
+              and journaling — practices I consistently return to because I recognise their benefit.
+            </p>
+            <p>
+              Despite this, addressing all dimensions of well-being — physical, mental,
+              emotional, social, and spiritual — remains an ongoing, evolving journey I
+              navigate daily with resilience and curiosity. That complexity is something I now
+              embrace rather than fight.
+            </p>
+          </div>
+
+          <!-- Section 3 -->
+          <div class="story-section">
+            <div class="story-number">
+              <span class="num">3</span>
+              <span class="label">Where I Am Now</span>
+            </div>
+            <h2>My Approach to Holistic Wellness Coaching</h2>
+            <p>
+              This path ultimately led me to become a holistic wellness coach. Following
+              redundancy from a corporate career, I felt a strong calling to support others
+              facing similar health and life challenges — recognising the gaps in traditional
+              support systems that I had experienced firsthand.
+            </p>
+            <p>
+              I bring lived experience and genuine empathy to my coaching practice, helping
+              clients build resilience, navigate chronic pain, and create meaningful change.
+              I'm not here to tell you what worked for me and expect it to work for you —
+              I'm here to help you find what works for <em>you</em>.
+            </p>
+            <div class="pull-quote">
+              <p>"I understand what it's like when the system falls short. My job is to help you fill those gaps with something that actually fits your life."</p>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="about-cta-box">
+            <p>
+              <strong>Ready to work with someone who gets it?</strong>
+              Let's start with a free 30-minute conversation — no commitment, no pressure.
+            </p>
+            <a href="lets-chat.html" class="btn" style="background: var(--gold); color: #1a1a1a; border-color: var(--gold); white-space: nowrap; flex-shrink: 0;">
+              Book a Free Discovery Call
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe -->
+  <section class="subscribe-section">
+    <span class="section-tag" style="color: var(--gold);">Stay Connected</span>
+    <h2 class="section-title">Get Insights on Well-being &amp; Resilience</h2>
+    <p class="section-subtitle">Occasional emails with practical tips, new posts, and tools for building a better tomorrow.</p>
+    <form name="subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="subscribe-form" action="/thank-you.html">
+      <input type="hidden" name="form-name" value="subscribe" />
+      <input type="hidden" name="bot-field" />
+      <input type="email" name="email" placeholder="Your email address" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="subscribe-note">No spam. Unsubscribe any time.</p>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="https://img1.wsimg.com/isteam/ip/d082d043-4001-40cb-9433-8a51fb944293/fulllogo_transparent-558685e.png/:/rs=h:200,cg:true,m/qt=q:95" alt="TJR Mind &amp; Body" />
+          <p>Holistic wellness coaching for people navigating chronic pain, life transitions, and the journey toward lasting well-being.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="coaching.html">What is Coaching?</a></li>
+            <li><a href="lets-chat.html">Book a Call</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/tjrmindbody" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://linktr.ee/tjrmindbody" target="_blank" rel="noopener noreferrer">Linktree</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 TJR Mind &amp; Body. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>

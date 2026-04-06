@@ -1,0 +1,74 @@
+# ============================================================
+# Decap CMS Configuration — TJR Mind & Body
+# Repo: https://github.com/timjardenross/tjrmindbodyblog
+# ============================================================
+
+backend:
+  name: git-gateway        # Netlify handles the GitHub auth
+  branch: main             # Change to "master" if your repo uses that
+
+# Where uploaded images get stored in the repo
+media_folder: "uploads"
+public_folder: "/uploads"
+
+# ── COLLECTIONS ─────────────────────────────────────────────
+collections:
+
+  # ── BLOG POSTS ──────────────────────────────────────────
+  # Each post is a separate markdown file in the posts/ folder.
+  # Click "Blog Posts" in the sidebar → "New Blog Post" to create a new post.
+  - label: "Blog Posts"
+    name: "blog"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "The post headline shown on the blog and homepage"
+
+      - label: "Date"
+        name: "date"
+        widget: "string"
+        hint: "Display date, e.g. 5 April 2026"
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Chronic Pain"
+          - "Mindfulness"
+          - "Coaching"
+          - "Resilience"
+          - "General"
+        default: "General"
+
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+        hint: "1–2 sentence preview shown on the blog listing and homepage cards"
+
+      - label: "Image URL"
+        name: "image"
+        widget: "string"
+        required: false
+        hint: "Paste a full https:// image URL, or leave blank for a default placeholder"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "The full post content — supports bold, headings, bullet points etc."
+
+  # ── SITE SETTINGS (optional, easy to expand later) ──────
+  - label: "Settings"
+    name: "settings"
+    files:
+      - label: "General"
+        name: "general"
+        file: "data/settings.json"
+        fields:
+          - {label: "Site tagline", name: "tagline", widget: "string", hint: "Shown in the hero section"}
+          - {label: "Instagram URL", name: "instagram", widget: "string"}
+          - {label: "Linktree URL", name: "linktree", widget: "string"}
